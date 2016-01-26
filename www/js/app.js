@@ -21,4 +21,5 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+var app = angular.module('angular-ionic-todo', ['ionic', 'LocalStorageModule'])
 })
