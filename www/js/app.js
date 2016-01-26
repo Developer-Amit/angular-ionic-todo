@@ -29,7 +29,7 @@ app.config(function (localStorageServiceProvider) {
 });
 
 
-app.controller('main', function($scope, $ionicModal, localStorageService) {
+app.controller('main', function ($scope, $ionicModal, localStorageService) {
   // initialize the tasks scope with empty array
   $scope.tasks = [];
 
