@@ -47,8 +47,13 @@ app.controller('main', function($scope, $ionicModal, localStorageService) {
 
   $scope.getTasks = function () {
     // fetches task from local storage
-
+    if (localStorageService.get(taskData)) {
+      $scope.tasks = localStorageService.get(taskData);
+    } else {
+      $scope.tasks = [];
+    }
   }
+
   $scope.createTask = function () {
     //creates a new task
 
