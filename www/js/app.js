@@ -56,7 +56,11 @@ app.controller('main', function($scope, $ionicModal, localStorageService) {
 
   $scope.createTask = function () {
     //creates a new task
-
+    $scope.tasks.push($scope.task);
+    localStorange.set(taskData, $scope.tasks);
+    $scope.task = {};
+    //close new task modal
+    $scope.newTaskModal.hide();
   }
   $scope.removeTask = function () {
     //removes a task
