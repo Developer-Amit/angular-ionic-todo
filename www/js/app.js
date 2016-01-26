@@ -30,11 +30,14 @@ app.config(function (localStorageServiceProvider) {
 
 
 app.controller('main', function ($scope, $ionicModal, localStorageService) {
+  //store the entities name in a variable
+  var taskData = 'task';
+
   // initialize the tasks scope with empty array
   $scope.tasks = [];
 
   //initialize the task scope with empty ojbect
-  $scope.task = {};
+  $scope.task = [];
 
   //configure the ionic model before use
   $ionicModal.fromTemplateUrl('new-task-modal.html', {
@@ -42,7 +45,7 @@ app.controller('main', function ($scope, $ionicModal, localStorageService) {
     animation: 'slide-in-up'
   }).then(function (modal) {
     $scope.newTaskModal = modal;
-  })
+  });
 
   $scope.getTasks = function () {
     // fetches task from local storage
@@ -51,21 +54,23 @@ app.controller('main', function ($scope, $ionicModal, localStorageService) {
     } else {
       $scope.tasks = [];
     }
-  }
+  };
 
   $scope.createTask = function () {
     //creates a new task
     $scope.tasks.push($scope.task);
-    localStorage.set(taskData, $scope.tasks);
+    localStorageService.set(taskData, $scope.tasks);
     $scope.task = {};
+
     //close new task modal
     $scope.newTaskModal.hide();
-  }
-  $scope.removeTask = function () {
+  };
+
+  $scope.removeTask = function (index) {
     //removes a task
     $scope.tasks.splice(index, 1);
     localStorageService.set(taskData, $scope.tasks);
-  }
+  };
 
   $scope.completeTask = function () {
     //updates a task as completed
@@ -74,6 +79,14 @@ app.controller('main', function ($scope, $ionicModal, localStorageService) {
     }
 
     localStorageService.set(taskData, $scope.tasks);
-  }
+  };
 
-})
+  $scope.openTaskModal = function () {
+    $scope.newTaskModal.show();
+  };
+
+  $scope.closeTaskModal = function () {
+    $scope.newTaskModal.hide();
+  };
+
+});
