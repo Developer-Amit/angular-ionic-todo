@@ -23,6 +23,9 @@ app.run(function ($ionicPlatform) {
   });
 });
 
+app.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('angular-ionic-todo')
 });
 
 
