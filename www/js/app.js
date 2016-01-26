@@ -23,4 +23,10 @@ var app = angular.module('angular-ionic-todo', ['ionic', 'LocalStorageModule'])
       });
     })
 
+app.config( function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('scotch-todo');
+
+});
+
 })
