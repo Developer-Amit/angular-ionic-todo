@@ -1,0 +1,37 @@
+{
+  "name": "angular-local-store",
+  "version": "0.2.3",
+  "homepage": "https://github.com/saintmac/angular-local-store",
+  "authors": [
+    "saintmac <martin.saintmac@gmail.com>"
+  ],
+  "description": "Angular $cookieStore like API for localStorage",
+  "main": "angular-local-store.js",
+  "keywords": [
+    "angular",
+    "$cookieStore",
+    "localStorage"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.15",
+    "angular-mocks": "~1.2.15"
+  },
+  "_release": "0.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.3",
+    "commit": "f50ca8e4e84f212a4a5519d343b642855eebf914"
+  },
+  "_source": "git://github.com/saintmac/angular-local-store.git",
+  "_target": "~0.2.3",
+  "_originalSource": "angular-local-store",
+  "_direct": true
+}
