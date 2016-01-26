@@ -64,7 +64,8 @@ app.controller('main', function($scope, $ionicModal, localStorageService) {
   }
   $scope.removeTask = function () {
     //removes a task
-
+    $scope.tasks.splice(index, 1);
+    localStorageService.set(taskData, $scope.tasks);
   }
   $scope.completeTask = function () {
     //updates a task as completed
